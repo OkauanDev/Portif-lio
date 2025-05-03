@@ -1,0 +1,99 @@
+@media screen and (max-width: 900px){
+    header .menu-desktop, header .btn-contato{
+        display: none;
+    }
+    header .btn-menu-mob{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 900px){
+    /* Responsivel da hero */
+    .hero-site .txt-hero h1{
+        font-size: 1.7em;
+        line-height: 45px;
+        font-weight: 200;
+    }
+    
+    .hero-site .txt-hero h1 span{
+        color: #F34DA9;
+        font-weight: 800;
+    }
+    
+    .hero-site .txt-hero p{
+        font-size: 15px;
+        font-weight: 300;
+    }
+}
+
+/* Responsivel dos projetos */
+
+@media screen and (max-width: 900px){
+    .projetos .itens-container{
+        flex-direction: column  ;
+    }
+    
+    .projetos .itens-container .img-itens img{
+        width: 100%;
+    }
+
+    .projetos .itens-container .txt-itens p{
+        margin-bottom: 20px;
+    }
+    
+    .projetos .itens-container .item-1{
+        order: 1;
+    }
+
+    .projetos .itens-container .item-2 {
+        order: 0;
+    }
+
+}
+
+@media screen and (max-width: 900px){
+    section.habilidades{
+        background-color: #3D1766;
+        padding: 80px 0;
+    }
+    
+    
+    .txt-habilidades, .icons-habilidades{
+        display: block;
+        width: 100%;
+
+    }
+    
+    .habilidades .txt-habilidades h3{
+        font-size: 2em;
+        line-height: 40px;
+    }
+    
+    .habilidades .txt-habilidades p{
+        margin-bottom: 20px;
+        
+    }
+    .habilidades .icons-habilidades button{
+        width: 100%;
+    }
+    
+    .habilidades img{
+        max-width: 40px;
+    }
+}
+
+@media screen and (max-width: 900px){
+    
+    .sobre-mim h3{
+        font-size: 2.5em;
+        line-height: 40px;
+        font-weight: 200;
+    }
+        
+    .sobre-mim p{
+        margin: 20px 0;
+        font-size: 18px;
+        font-weight: 300;
+        text-align: justify;
+    }
+}
