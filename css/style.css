@@ -1,370 +1,147 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-body{
-    background-color: #E3E3E3 ;
+
+html {
+    scroll-behavior: smooth;
 }
 
-.interface{
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 5%;
+:root {
+    --primaria: #ff00e2;
+    --secundaria: #050deb;
+    --escuro: #0f172a;
+    --maisEscuro: #0a0f1c;
+    --claro: #e2e8f0;
+    --vidro: rgba(255, 255, 255, 0.1);
+
 }
 
-/*Estilo do header*/
-header{
-    width: 100%;
-    padding: 40px 0px;
+body {
+    background-color: var(--escuro);
+    color: var(--claro);
+}
+
+
+.navegation{
     position: fixed;
     top: 0;
-    left: 0;
-
-    transition: 0.5s;
+    background-color: rgba(15, 23, 42, 0.8);
+    width: 100%;
+    z-index: 100;
+    padding: 1.5rem;
 }
 
-header .interface{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
+.menu{
+        display: flex;
+        list-style: none;
+        gap: 3rem;
+        justify-content: center;
 }
 
-header.rolar{
-    background-color: #FFF;
-    padding: 10px 0;
-    box-shadow: 0 0 8px #00000061;
-}
-
-header.rolar .menu-desktop nav ul li a {
-    color: #000;
-}
-
-header.rolar .btn-contato button{
-    border: 1px solid #000;
-    background-color: transparent;
-    color: #000;
-}
-
-header.rolar .btn-contato button:hover{
-    background-color: #000;
-    color: #FFF;
-}
-
-/* ***************************************************8 */
-
-header .logo img{
-    max-width: 50px;
-} 
-
-header .menu-desktop nav ul{
-    list-style-type: none;
-}
-
-header .menu-desktop nav ul li{
-    display: inline-block;
-    margin: 0 40px;
-}
-
-header .menu-desktop nav ul li a{
-    color: #F34DA9;
+.menu-link{
     text-decoration: none;
-    display: inline-block;
-    transition: 0.2s;
-    
-}
-
-.menu-desktop nav a:hover{
-    transform: scale(1.05);
-}
-
-header .btn-contato button{
-    width: 140px;
-    height: 50px;
-    font-size: 18px;
-    background-color: #8C3061;
-    border: 1px solid #F34DA9;
-    border-radius: 15px;
-    color: #F34DA9;
-    cursor: pointer;
-    transition: 0.5s;
-
-}
-
-header .btn-contato button:hover{
-    background-color: #F9E400;
-    color: #000;
-}
-
-/* Estilo do botão do menu mobile */
-header .btn-menu-mob {
-    display: none;
+    color: var(--claro);
+    font-weight: 500;
     position: relative;
-    z-index: 999999;
-}
-header .btn-menu-mob div{
-    background-color: #FFF;
-    height: 3px;
-    margin: 10px 0;
-    transition: 0.2s;
+    padding: 0.5rem 0;
 }
 
-header .btn-menu-mob .line-menumob-1{
-    width: 30px;
-}
-
-header .btn-menu-mob .line-menumob-2{
-    width: 30px;
-}
-
-header.rolar .btn-menu-mob div{
-    background-color: #000;
-}
-
-header .btn-menu-mob .line-menumob-1.ativo1{
-    transform: rotate(45deg) translate(30%);
-    background-color: #FFF;
-}
-header .btn-menu-mob .line-menumob-2.ativo2{
-    transform: rotate(-45deg) translate(30%);
-    width: 30px;
-    background-color: #FFF;
-}
-
-/* Estilo do menu mobile */
-header .menu-mobile{
+.menu-link::after{
+    content: '';
+    height: 2px;
     width: 0;
-    height: 0;
-    background-color: #000;
     position: absolute;
-    top: 0;
-    right: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    overflow: hidden;
-    transition: 0.5s;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primaria);
+    transition: width 0.5s ease;
 }
 
-header .menu-mobile nav{
+.menu-link:hover::after{
     width: 100%;
 }
 
-header .menu-mobile nav ul{
-    list-style-type: none;
-}
-
-header .menu-mobile nav a{
-    font-size: 24px;
-    text-decoration: none;
-    color: #FFF;
-    display: block;
-    padding: 20px 0;
-    transition: 0.5s;
-}
-
-header .menu-mobile nav a:hover{
-    background-color: #FFF;
-    color: #000;
-    box-shadow: 0 0 20px #FFF;
-}
-
-header .menu-mobile.abrir{
-    width: 100%;
-    height: 100vh;
-}
-
-body.no-overflow{
-    overflow: hidden;
-}
-
-/* Estilo do hero */
-section.hero-site{
-    height: 98vh;
-    color: #FFF;
-    background-color: #2D2727;
-    background-image: linear-gradient(to bottom, #2D2727 50%, #3D1766 );
-}
-
-.hero-site .interface{
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-.hero-site .txt-hero h1{
-    font-size: 4em;
-    line-height: 100px;
-    font-weight: 200;
-}
-
-.hero-site .txt-hero h1 span{
-    color: #F34DA9;
-    font-weight: 800;
-}
-
-.hero-site .txt-hero p{
-    font-size: 20px;
-    font-weight: 300;
-}
-
-/* Estilo dos projetos  */
-section.projetos{
-    padding: 80px 0;
-}
-
-.projetos .itens-container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10%;
-    margin-bottom: 60px;
-}
-
-.projetos .itens-container .img-itens img{
-    max-width: 480px;
-}
-
-.projetos .itens-container .txt-itens h3{
-    font-size: 3em;
-    line-height: 50px;
-    margin-bottom: 20px;
-}
-
-.projetos .itens-container .txt-itens h3 span{
-    font-weight: 250;
-}
-
-/* Estilos das habilidades */
-section.habilidades{
-    background-color: #3D1766;
-    padding: 80px 0;
-}
-
-
-.txt-habilidades, .icons-habilidades{
-    display: inline-block;
-    width: 50%;
-    margin-right: -4px;
-    vertical-align: middle;
-}
-
-.habilidades .txt-habilidades h3{
-    font-size: 2.5em;
-    line-height: 50px;
-    font-weight: 300;
-    color: #FFF;
-    margin-bottom: 20px;
-}
-
-.habilidades .txt-habilidades p{
-    font-size: 1em;
-    color: #FFF;
-    
-}
-
-.habilidades .txt-habilidades p span{
-    display: block;
-}
-
-.habilidades .icons-habilidades button{
-    display: flex;
-    align-items: center ;
-    justify-content: space-between;
-    width: 60%;
-    height: 60px;
-    margin: 0 auto 20px auto;
-    padding: 0 60px;
-    background-color: #FFF;
-    border: 2px solid #F9E400;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.5s;
-}
-
-.habilidades img{
-    max-width: 40px;
-}
-
-.habilidades .icons-habilidades button:hover{
-    background-color: #8C3061;
-}
-
-.habilidades .icons-habilidades button:hover P{
-    color: #F9E400;
-}
-
-/* Estilo da sessão do sobre mim */
-section.sobre-mim{
-    height: 600px;
-    background-color: #E3E3E3;
-}
-
-.sobre-mim > .interface{
+.cabecalho{
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
     flex-direction: column;
 }
 
-.sobre-mim h3{
-    font-size: 3em;
-    line-height: 100px;
-    font-weight: 200;
-}
-
-.sobre-mim p span {
-    color: #000;
-    font-weight: 600;
-    
-}
-
-.sobre-mim p{
-    margin: 20px 0;
-    font-size: 20px;
-    font-weight: 300;
-}
-
-/* Estilo do rodapé */
-footer{
-    background-color: #3D1766;
-    width: 100%;
-    text-align: center;
-    padding: 30px 0;
-}
-
-footer .top-footer button{
-    width: 60px;
-    height: 60px;
+.ft-perfil{
+    width: 350px;
+    height: 350px;
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
     border-radius: 50%;
-    border: #FFF solid 2PX;
-    background-color: transparent;
-    cursor: pointer;
-    margin: 0 10px;
-    transition: 0.5s;
+    border: 4px solid var(--vidro) ;
 }
 
-footer .top-footer button:hover{
-    background-color: #F9E400;
+h1{
+    font-size: 3.5rem;
+    color: var(--primaria);
+    font-weight: bold;
+    margin: 20px;
 }
 
-footer img{
-    width: 30px;
-    width: 30px;
+.cabecalho-p{
+    font-size: 1.5rem;
+    color: var(--claro);
+
 }
 
-footer .middle-footer{
-    margin: 20px 0;
-    border-top: 2px solid white;
+.sobre{
+    padding: 6rem 2rem;
 }
 
-footer .middle-footer p{
-    color: #FFF;
-    margin-top: 15px;
+.sobre-title{
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom:10px ;
+}
+
+.sobre-box{
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 16px;
+    border: 1px solid var(--vidro);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.sobre-p{
+    text-align: center;
+    font-family: 1rem;
+
+}
+
+.projetos{
+
+}
+
+.projetos-tile{
+
+}
+
+.projetos-box{
+
+}
+
+.projetos-cart{
+
+}
+
+.projetos-img{
+
+}
+
+.info-projetos{
+
+}
+.projetos-p{
+    
 }
