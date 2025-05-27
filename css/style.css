@@ -36,14 +36,17 @@ body {
         radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%),
         radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%),
         var(--maisEscuro);
-    
+
 }
 
-@keyframes flutuar{
-    0%, 100% {
+@keyframes flutuar {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
-    50%{
+
+    50% {
         transform: translateY(-20px);
     }
 }
@@ -263,3 +266,75 @@ textarea {
 }
 
 
+.menu-mobile {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: rgba(15, 23, 42, 0.95); 
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+    transition: right 0.3s ease-in-out;
+}
+
+.menu-mobile nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.menu-mobile nav ul li a {
+    color: var(--claro);
+    text-decoration: none;
+    font-size: 1.5rem;
+
+}
+
+.btn-fechar {
+    align-self: flex-end;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--primaria);
+}
+
+.open-menu {
+    right: 0;
+}
+
+.overlay-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 100;
+    display: none;
+}
+
+.overlay-menu.active {
+    display: block;
+}
+
+@media screen and (max-width: 1020px) {
+    .menu {
+        display: none;
+    }
+
+    .btn-abrir-menu {
+        
+        position: fixed;
+        top: 1.5rem;
+        right: 1.5rem;
+        font-size: 2rem;
+        z-index: 300;
+        /* maior que menu */
+        color: var(--primaria);
+        cursor: pointer;
+    }
+}

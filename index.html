@@ -8,6 +8,7 @@
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@100;300;400;700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="icon" href="img/logo (1) 1.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Kauan portifolio</title>
 </head>
@@ -22,6 +23,30 @@
             <li><a href="#contato" class="menu-link">Contatos</a></li>
         </ul>
     </nav>
+    <!-- Botão abrir menu (já existente) -->
+    <div class="btn-abrir-menu" id="btn-menu">
+        <i class="bi bi-list"></i>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div class="menu-mobile" id="menu-mobile">
+        <div class="btn-fechar" id="btn-fechar">
+            <i class="bi bi-x"></i>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio" class="menu-link">Início</a></li>
+                <li><a href="#sobre" class="menu-link">Sobre</a></li>
+                <li><a href="#projetos" class="menu-link">Projetos</a></li>
+                <li><a href="#contato" class="menu-link">Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Overlay (fundo escuro quando menu abre) -->
+    <div class="overlay-menu" id="overlay"></div>
+
+
     <main id="inicio" class="cabecalho">
         <img src="img/logoOficial.png" alt="foto perfil" class="ft-perfil">
         <h1>Kauan Dev</h1>
@@ -86,7 +111,7 @@
                 <textarea placeholder="Digite sua mensagem" class="campo-form" rows="10" id="mensagem"></textarea>
             </div>
 
-            <button type="submit" class="btn-form" >Enviar WhatsApp</button>
+            <button type="submit" class="btn-form">Enviar WhatsApp</button>
         </form>
     </section>
 
